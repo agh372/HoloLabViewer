@@ -41,7 +41,7 @@ public class GroundEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     void OnClick()
     {
         
-        GameObject handle = Resources.Load("models/bedmarvel") as GameObject;
+        GameObject handle = Resources.Load("models/pPlane2") as GameObject;
         handle.name = "loaded";
         GameObject handleGO = Instantiate(handle, laserPointer.getModelPlacementPosition(), Quaternion.identity);
 
