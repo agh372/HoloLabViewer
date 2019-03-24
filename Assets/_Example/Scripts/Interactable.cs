@@ -17,11 +17,15 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private GameObject deleteMain;
     private GameObject translateMain;
     private IEnumerator coroutine;
+    LaserPointer laserPointer;
 
 
     void Start()
     {
         state = InteractionState.NotSelected;
+
+        GameObject thePlayer = GameObject.Find("LaserPointer");
+        laserPointer = thePlayer.GetComponent<LaserPointer>();
     }
 
     private void OnEnable()
@@ -45,7 +49,9 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         while (true)
         {
+            gameObject.transform.position =   laserPointer.getModelPlacementPosition();
             yield return new WaitForSeconds(1.0f);
+
         }
     }
 

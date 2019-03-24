@@ -9,6 +9,7 @@ public class ActionOnModel : MonoBehaviour, IPointerClickHandler, IPointerEnterH
    public GameObject gameObject;
     public delegate void OnButtonClick(string name);
     public static event OnButtonClick onButtonClick;
+
     void Start()
     {
         
